@@ -1,0 +1,55 @@
+.banner {
+  color: white;
+  text-align: center;
+  background-size: cover !important;
+  align-items: center;
+  width: 100%;
+  background-position: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+  }
+}
+
+.banner-home {
+  padding: 2em 0;
+}
+
+.banner-link-block {
+    color: #CCC;
+    display: block;
+    background: rgba(0,0,0,.3);
+    padding: 20px;
+    border-radius: 1em;
+    transition: all 250ms ease;
+    max-width: 27em;
+    margin: 0 auto;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 3px 5px black;
+      text-decoration: none;
+      background: rgba(255,255,255,.3);
+    }
+}

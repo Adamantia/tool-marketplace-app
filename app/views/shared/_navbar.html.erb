@@ -1,0 +1,75 @@
+<div class="navbar-tools">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-tools-brand" do %>
+    <%= image_tag "justthetools.svg", height: 30 %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-tools-right hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <%= link_to "Rent out", new_item_path, class: "navbar-tools-item navbar-tools-link" %>
+      <%= link_to "Rent", items_path, class: "navbar-tools-item navbar-tools-link" %>
+      <%= link_to "Home", root_path, class: "navbar-tools-item navbar-tools-link" %>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-tools-item">
+        <div class="dropdown">
+          <%= image_tag "default-user-avatar.gif", class: "avatar dropdown-toggle", id: "navbar-tools-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-tools-dropdown-menu">
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Edit Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-columns"></i>  <%= t(".settings", default: "Dashboard") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-tools-item navbar-tools-link" %>
+      <%= link_to "Home", root_path, class: "navbar-tools-item navbar-tools-link" %>
+    <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-tools-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-tools-dropdown-menu">
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to dashboard_path do %>
+            <i class="fa fa-columns"></i>  <%= t(".settings", default: "Dashboard") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Edit Profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

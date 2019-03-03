@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="cards-container">
+    <%= form_tag items_path, method: :get, :id => "search_form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "enter location or model"
+      %>
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search button',:name => nil%>
+
+    <% end %>
+    <div class="row card-row">
+      <% @items.each do |item| %>
+
+        <%= link_to item_path(item) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card-wrapper">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url(<%= cl_image_path item.picture, height: 300, width: 400, crop: :fill %>);"></div>
+            <div class="card-description">
+              <h2><%= item.make %></h2>
+              <i class="fa fa-map-marker-alt"></i> <%= item.location %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>">
+  </div>
+</div>

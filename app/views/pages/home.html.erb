@@ -1,0 +1,57 @@
+<div class="banner banner-home" style="background-image: linear-gradient(-225deg, #101010 0%, rgba(0,36,61,0.5) 0%), url('https://images.pexels.com/photos/162625/grinder-hitachi-power-tool-flexible-162625.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');">
+  <div class="banner-content">
+    <h1>Rent or Rent out equipment </h1>
+    <div class="container">
+
+      <div class="row three-steps-main">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+
+          <%= link_to items_path, class: "banner-link-block" do %>
+          <div class="first-step column">
+            <i class="fa fa-3x fa-search"></i>
+            <h2>Search and rent the tool or equipment you need </h2>
+            <p>Search for the item you are looking for, book the time you need it for and we will deliver it to your door within 24hr. </p>
+          </div>
+          <% end %>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <%= link_to new_item_path, class: "banner-link-block" do %>
+          <div class="second-step column">
+            <i class="fa fa-3x fa-cogs"></i>
+            <h2>Rent out a tool or equipment</h2>
+            <p>Make money on the side and rent out a tool or from your toolkit for home or industrial construction, demolition or repair. Set up the price, the items location and we will take care of the transport to the customer. </p>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+  <div id="about" class="container page-container">
+
+    <div class="card-container">
+      <h3>Recommended for you</h3>
+      <div class="row card-row">
+        <% @items.each do |item| %>
+          <%= link_to item_path(item) do %>
+            <div class="col-sm-4">
+              <div class="card-wrapper">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2)), url('<%= cl_image_path item.picture, height: 300, width: 400, crop: :fill %>');">
+                </div>
+                <div class="card-description">
+                  <h2><%= item.make %></h2>
+                  <!-- $<%= item.rate %> -->
+                  <i class="fa fa-map-marker-alt"></i> <%= item.location %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="responsive">
+  <div class="item-container">
+    <div class="item-photo">
+      <img src="<%= @item.picture %>" width="100%" alt="<%= @item.description %>" />
+    </div>
+      <div class="item-description">
+        <h1 class="item-title"><%= @item.make %></h1>
+        <dl class="item-details">
+          <dt>Daily rate: </dt>
+          <dd>&euro; <%= @item.rate %></dd>
+          <dt>Description: </dt>
+          <dd><%= @item.description %></dd>
+          <dt>Location: </dt>
+          <dd><%= @item.location %></dd>
+        </dl>
+
+        <% if current_user != @item.user %>
+          <p><%= link_to "Book this item", new_item_rental_path(@item), class: "btn btn-primary btn-lg button" %></p>
+        <% else %>
+          <span>Delete<%= link_to item_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_item"></i>
+          </span>
+        <% end %>
+        <span>
+          Edit
+          <%= link_to edit_item_path(@item),  method: :get do %>
+          <i class="far fa-edit edit_item"></i>
+        </span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.home-form {
+  background-color: transparent;
+  padding: 10px;
+  text-align: center;
+}
+
+.form {
+  max-width: 25em;
+  margin: 1em auto 2em;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  form {
+    margin-top: 2em;
+  }
+
+  .user_remember_me {
+    display: inline-block;
+    float: right;
+
+    label {
+      margin-left: 10px;
+      font-weight: 200;
+    }
+  }
+}
+
+.form-links {
+  margin: 1em 0;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    padding: 2px 5px;
+  }
+}
+
+.form-item-new {
+  label {
+    text-align: left;
+  }
+}

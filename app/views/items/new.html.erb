@@ -1,0 +1,24 @@
+
+<div id="newshow" class="item-new">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Rent your item</h1>
+
+        <div class="form form-item-new text-left">
+          <p>List the details of the item you want to rent out below and don't forget to upload a picture.</p>
+
+          <%= simple_form_for @item do |f| %>
+            <%= f.input :rate, placeholder: "€/day", label: "Rent out price", input_html: { min: '0' } %>
+            <%= f.input :make, placeholder: "e.g. Product Name EG-250", label: "Item model" %>
+            <%= f.input :description, placeholder: "Enter item description and specifications" %>
+            <%= f.input :location, placeholder: "Enter city"  %>
+            <%= f.input :picture, label: "Upload a picture of your item:"%>
+            <%= f.button :submit, class: 'btn btn-lg btn-primary button'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Go back", @item %>
+</div>

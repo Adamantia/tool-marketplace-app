@@ -1,0 +1,12 @@
+<div class="form form-item-new text-left">
+  <h2>Edit yout item below.</h2>
+<%#= render "form" %>
+      <%= simple_form_for @item do |f| %>
+        <%= f.input :rate %>
+        <%= f.input :make %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :picture %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+</div>

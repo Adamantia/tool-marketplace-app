@@ -1,0 +1,55 @@
+.dashboard {
+  & li {
+    margin-bottom: 2rem;
+  }
+}
+
+.my-items-list,
+.bookings-list {
+  border-top: 1px solid #EEE;
+  font-size: 85%;
+  margin-top: 1em;
+  max-width: 25em;
+  text-align: left;
+  padding-left: 0;
+
+  li {
+    padding: .5em;
+    border-bottom: 1px solid #EEE;
+
+    &:hover {
+      background-color: #EEE;
+    }
+
+    & > a {
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
+
+.booking-actions {
+  margin-top: 1rem;
+
+  & .btn {
+    font-size: 14px;
+  }
+
+  &-form {
+    display: inline-block;
+
+    & .stripe-button-el {
+      padding: 1px 12px;
+      @extend .btn;
+      @extend .btn-primary;
+
+      & span {
+        font-size: 14px;
+        background: none;
+        box-shadow: none;
+        font-weight: normal;
+        padding: 0;
+      }
+    }
+  }
+}
