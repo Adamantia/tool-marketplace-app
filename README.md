@@ -9,4 +9,4 @@ Rails MVC app to build a demo marketplace app.
 - Cloudinary
 
 ## Demo
-Available at tool-marketplace.heroku.com
+Available at tool-marketplace.herokuapp.com
